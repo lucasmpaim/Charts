@@ -61,10 +61,9 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
     
     @objc open func drawDataSet(context: CGContext, dataSet: ICandleChartDataSet)
     {
-        guard
-            let dataProvider = dataProvider
-            else { return }
-
+        
+        guard let dataProvider = dataProvider else { return }
+        
         let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
         
         let phaseY = animator.phaseY
